@@ -27,62 +27,63 @@ connection.connect(function(err) {
 function start() {
   inquirer
     .prompt({
-      name: "action",
-      type: "input",
-      message: "What is the item ID of the product you would like to buy??",
-    })
+        name: "customerProductChoice",
+        type: "input",
+        message: "What is the item ID of the product you would like to buy?",
+    },
+    {
+        name: "customerUnits",
+        type: "input",
+        message: "How many units of the product would you like to buy?",
+      },
+)
     .then(function(answer) {
       // based on their answer, switch for search options
-        switch(answer.action) {
-            case "Find songs by artist":
-                artistSearch();
+        switch(answer.customerProductChoice) {
+            case "Quanity of Product is available":
+                console.log("Your in luck. Product is available!")
+                //productAvailable();
                 break;
-            case "Find all artists who appear more than once":
-                console.log("find artists appearing more than once working");
-                break;
-            case "Find data within a specific chart range":
-                console.log("specific chart range working");
-                break;
-            case "Search for a specific song":
-                console.log("specific song working");
+            case "Quantity is zero":
+                console.log("Oh No! We're sold out right now!");
                 break;
         }
     });
 }
 
-// function to handle posting new items up for auction
-function artistSearch() {
-  // prompt for info about the item being put up for auction
-  inquirer
-    .prompt([
-      {
-        name: "item",
-        type: "input",
-        message: "Which artist/group?"
-      },
+// // function to handle posting new items up for auction
+// function productAvailable() {
+//   // prompt for info about the item being put up for auction
+//   inquirer
+//     .prompt([
+//       {
+//         name: "item",
+//         type: "input",
+//         message: "Which artist/group?"
+//       },
       
-    ])
-    .then(function(answer) {
-      // when finished prompting, display artist's songs
-      connection.query(
-        "SELECT * FROM top5000 WHERE ?",
-        [
-            {
-                artist: answer.item 
-            },
-        ],
-        function(err, results) {
-          if (err) throw err;
-          for (var i = 0; i < results.length; i++) {
-          console.log(results[2]);
+//     ])
+//     .then(function(answer) {
+//       // when finished prompting, display artist's songs
+//       connection.query(
+//         "SELECT * FROM top5000 WHERE ?",
+//         [
+//             {
+//                 artist: answer.item 
+//             },
+//         ],
+//         function(err, results) {
+//           if (err) throw err;
+//           for (var i = 0; i < results.length; i++) {
+//           console.log(results[2]);
           
-          }
-          // re-prompt the user to do another query
-          start();
-        }
-      );
-    });
-}
+//           }
+//           // re-prompt the user to do another query
+//           start();
+//         }
+//       );
+//     });
+// }
 
 // function bidAuction() {
 //   // query the database for all items being auctioned
