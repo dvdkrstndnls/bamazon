@@ -1,0 +1,31 @@
+{
+  "name": "bamazon",
+  "version": "1.0.0",
+  "description": "An Amazon-like online store using node.js and MySQL",
+  "main": "bamazonCustomer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dvdkrstndnls/bamazon.git"
+  },
+  "keywords": [
+    "ecommerce",
+    "node",
+    "MySQL",
+    "amazon",
+    "database"
+  ],
+  "author": "david daniels",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dvdkrstndnls/bamazon/issues"
+  },
+  "homepage": "https://github.com/dvdkrstndnls/bamazon#readme",
+  "dependencies": {
+    "inquirer": "^5.2.0",
+    "mysql": "^2.15.0",
+    "node": "^10.0.0"
+  }
+}
