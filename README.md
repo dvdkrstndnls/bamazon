@@ -8,8 +8,8 @@ I've created an Amazon-like storefront with the MySQL. The app takes in orders f
 ## Installation
 I've asked my .gitignore file to ignore my Node modules, so you'll need to install NODE, MYSQL and INQUIRER
 
-![GitHub Logo](/images/roofofconceptterminal.png)
-Format: ![Alt Text](url)
+![GitHub Logo](/images/proofofconceptterminal.png)
+Format: ![Alt Text](images/proofofconceptterminal.png)
 ![alt text](http://images/proofofconceptterminal.png)
 
 
